@@ -1,0 +1,7 @@
+com\hospitalapp\AbstractDocTest.class
+com\hospitalapp\BasicTest.class
+com\hospitalapp\util\BCryptPasswordEncoderUtil.class
+com\hospitalapp\RestControllerTest.class
+com\hospitalapp\service\DepartmentServiceTest.class
+com\hospitalapp\BasicTransactionalTest.class
+com\hospitalapp\AbstractTest.class
