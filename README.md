@@ -1,5 +1,14 @@
 # Hospital app
 
+### What to install first
+
+First java needs to be installed: 
+For windows install java 22:
+
+https://docs.oracle.com/en/java/javase/22/install/installation-jdk-microsoft-windows-platforms.html
+
+Also make sure to setup JAVA_HOME env variable in windows ( needed to run maven )
+
 ## How to run
 `mvnw clean package && java -jar target/com.hospitalapp-2.3.0.jar`
 
