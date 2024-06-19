@@ -2,16 +2,13 @@ package com.hospitalapp.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.time.Instant;
-import java.util.Set;
 
 @Entity
 public class AdmissionState extends HospitalEntity {
 
     private static final long serialVersionUID = 1L;
 
-    @Null
     private Instant exitingDate;
 
     @NotNull
@@ -19,6 +16,12 @@ public class AdmissionState extends HospitalEntity {
 
     @NotNull
     private Boolean discharge;
+
+    @NotNull
+    private String cause;
+
+    @NotNull
+    private String reason;
 
     public Boolean getDischarge() {
         return this.discharge;
@@ -44,13 +47,22 @@ public class AdmissionState extends HospitalEntity {
         return this.exitingDate;
     }
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    public String getReason(){
+        return this.reason;
+    }
+    public void setReason(String reason){
+        this.reason = reason;
+    }
+    public String getCause(){
+        return this.cause;
+    }
+    public void setCause(String cause){
+        this.cause = cause;
+    }
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "patientId")
     private Patient patient;
-
-    public AdmissionState() {
-        super();
-    }
 
     public Patient getPatient() {
         return this.patient;

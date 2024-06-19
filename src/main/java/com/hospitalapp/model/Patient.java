@@ -46,7 +46,7 @@ public class Patient extends HospitalEntity {
         this.birthDate = birthDate;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "departmentId")
     private Department department;
 

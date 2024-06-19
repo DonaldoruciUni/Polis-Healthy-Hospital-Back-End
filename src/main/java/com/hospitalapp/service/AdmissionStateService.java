@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface AdmissionStateService {
     Optional<AdmissionState> getById(Long id);
 
-    List<AdmissionState> findAll();
+    List<AdmissionState> findByPatientId(Long patientId);
 
     AdmissionState upsert(AdmissionState p);
 

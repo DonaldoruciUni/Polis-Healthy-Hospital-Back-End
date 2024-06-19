@@ -40,7 +40,7 @@
             <column name="departmentId" type="bigint(20)">
                 <constraints references="Department(id)"
                              foreignKeyName="FK_Patient_DepartmentId"
-                             deleteCascade="true"
+                             deleteCascade="false"
                              nullable="false" />
             </column>
         </createTable>
@@ -64,8 +64,16 @@
                 <constraints nullable="false" />
             </column>
 
+            <column name="reason" type="varchar(1000)" >
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cause" type="varchar(1000)" >
+                <constraints nullable="false" />
+            </column>
+
             <column name="patientId" type="bigint(20)">
-                <constraints references="Patient(id)" foreignKeyName="FK_AdmissionState_PatientId" deleteCascade="true" nullable="false" />
+                <constraints references="Patient(id)" foreignKeyName="FK_AdmissionState_PatientId" deleteCascade="false" nullable="false" />
             </column>
         </createTable>
     </changeSet>
@@ -84,7 +92,7 @@
             <column name="admissionStateId" type="bigint(20)">
                 <constraints references="Patient(id)"
                              foreignKeyName="FK_ClinicalData_AdmissionStateId"
-                             deleteCascade="true"
+                             deleteCascade="false"
                              nullable="false"
                              unique="true"
                 />

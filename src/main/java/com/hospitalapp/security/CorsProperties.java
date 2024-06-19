@@ -26,7 +26,7 @@ public class CorsProperties {
     /**
      * The value of the Access-Control-Allow-Methods header.
      */
-    private List<String> allowedMethods = Arrays.asList("GET");
+    private List<String> allowedMethods = Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS");
 
     /**
      * The value of the Access-Control-Allow-Origin header.

@@ -34,7 +34,4 @@ public class Department extends HospitalEntity {
     public void setCode(final String code) {
         this.code = code;
     }
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Patient> patients;
 }

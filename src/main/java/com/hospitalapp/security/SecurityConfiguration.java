@@ -8,7 +8,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -58,13 +57,6 @@ public class SecurityConfiguration {
                 .and()
                 .csrf().disable();
 
-        }
-
-        @Bean
-        public AuthenticationEntryPoint apiAuthenticationEntryPoint() {
-            final RestBasicAuthenticationEntryPoint entryPoint = new RestBasicAuthenticationEntryPoint();
-            entryPoint.setRealmName("api realm");
-            return entryPoint;
         }
     }
 }

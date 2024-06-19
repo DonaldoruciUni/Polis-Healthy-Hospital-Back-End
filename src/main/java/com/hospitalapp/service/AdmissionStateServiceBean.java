@@ -43,12 +43,12 @@ public class AdmissionStateServiceBean implements AdmissionStateService {
     }
 
     @Override
-    public List<AdmissionState> findAll() {
-        logger.info("> findAll");
+    public List<AdmissionState> findByPatientId(Long patientId) {
+        logger.info("> findByPatientId");
 
-        final List<AdmissionState> AdmissionStates = admissionStateRepository.findAll();
+        final List<AdmissionState> AdmissionStates = admissionStateRepository.findByPatientId(patientId);
 
-        logger.info("< findAll");
+        logger.info("< findByPatientId");
 
         return AdmissionStates;
     }

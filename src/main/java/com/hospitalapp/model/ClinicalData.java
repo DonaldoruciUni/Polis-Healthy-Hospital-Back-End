@@ -19,7 +19,7 @@ public class ClinicalData extends HospitalEntity {
         this.clinicalRecord = clinicalRecord;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "admissionStateId")
     private AdmissionState admissionState;
 

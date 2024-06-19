@@ -26,26 +26,15 @@ public class AdmissionStateController {
     @Autowired
     private transient AdmissionStateService admissionStateService;
 
-    @GetMapping
-    public List<AdmissionState> getAdmissionStates() {
-        logger.info("> getAdmissionStates");
-
-        final List<AdmissionState> admissionStates = admissionStateService.findAll();
-
-        logger.info("< getAdmissionStates");
-
-        return admissionStates;
-    }
-
-    @GetMapping("/{id}")
-    public AdmissionState getAdmissionState(@PathVariable final Long id) {
+    @GetMapping("/{patientId}")
+    public List<AdmissionState> getAdmissionState(@PathVariable final Long patientId) {
         logger.info("> getAdmissionState");
 
-        final Optional<AdmissionState> AdmissionStateOptional = admissionStateService.getById(id);
+        final List<AdmissionState> admissionStates = admissionStateService.findByPatientId(patientId);
 
         logger.info("< getAdmissionState");
 
-        return AdmissionStateOptional.get();
+        return admissionStates;
     }
 
     @PostMapping
