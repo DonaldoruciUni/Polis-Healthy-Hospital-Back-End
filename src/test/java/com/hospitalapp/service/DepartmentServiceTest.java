@@ -17,8 +17,6 @@ import com.hospitalapp.model.Department;
 
 /**
  * Unit test methods for the departmentService and departmentServiceBean.
- * 
- * @author Matt Warman
  */
 @RunWith(SpringRunner.class)
 @BasicTransactionalTest
